@@ -1,0 +1,49 @@
+<!--Main Layout-->
+    <main>
+        <form [formGroup]="form">
+            <div class="container-fluid">
+                <div class="row mx-5 h-10vh mt-banner">
+                    <div class="col-lg-2 border-right">
+                        <div class="d-flex flex-column justify-content-center align-items-start pt-5">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-7 p-0">
+                        <div class="d-flex flex-column justify-content-center align-items-start">
+                            
+                            <div class="px-3 py-2 mb-3 w-100 fa-2x font-weight-bold">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x text-fordBlue"></i>
+                                    <i class="fas fa-lightbulb fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <span>My New Idea</span>
+                            </div>
+                            <div class="px-3 mt-5 mb-5 w-100 border-bottom form-group">
+
+                                <div class="md-form">
+                                    <i class="fa fa-exclamation prefix px-2"></i>
+                                    <label for="ideaTitle">Idea Title</label>
+                                    <input #ideaTitle formControlName="ideaTitle" name='title' type="text" id="ideaTitle" class="form-control">
+                                    
+                                </div>
+                            
+                                <div class="md-form">
+                                    <i class="fas fa-pencil-alt prefix"></i>
+                                    <label for="textarea-char-counter">Detail your idea</label>
+                                    <textarea #ideaDescription formControlName="ideaDescription" name="description" id="textarea-char-counter" class="form-control md-textarea" length="300" rows="2"></textarea>
+                                    
+                                </div>
+
+
+                                <button (click)="addData(ideaTitle, ideaDescription)" type="button" class="btn btn-primary btn-md mb-4 w-100">Submit</button> 
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+<!--Main Layout-->
+
+

@@ -1,0 +1,39 @@
+<!-- Editable table -->
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4 text-white" style="background-color: #144a73 !important;">C&amp;B Review and Priortization</h3>
+    <div class="card-body">
+        <div id="table" class="table-editable">
+            <span class="table-add float-right mb-3 mr-2"><a href="/MainPage" class="text-success"><i class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead class="thead-fordBlue">
+                    <tr>
+                        <th class="text-center">Submitted By</th>
+                        <th class="text-center">Idea Title</th>
+                        <th class="text-center">Idea Description</th>
+                        <th class="text-center">COE</th>
+                        <th class="text-center">Value</th>
+                        <th class="text-center">Priority</th>
+                        <th class="text-center">Defferred</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data; let i = index">
+                        <td class="pt-3-half" contenteditable="true">{{ item.UserID}}</td>
+                        <td class="pt-3-half" contenteditable="true">{{ item.Title}}</td>
+                        <td class="pt-3-half" contenteditable="true">{{ item.Description}}</td>
+                        <td class="pt-3-half" contenteditable="true">{{ item.COE }}</td>
+                        <td class="pt-3-half" contenteditable="true">{{ item.Value }}</td>
+                        <td class="pt-3-half">
+                            <span *ngIf="i != 0" (click)= "moveUp(i)" class="table-up"><a class="indigo-text"><i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i></a></span>
+                            <span *ngIf="i != data.length-1" (click)= "moveDown(i)" class="table-down"><a class="indigo-text"><i class="fas fa-long-arrow-alt-down" aria-hidden="true"></i></a></span>
+                        </td>
+                        <td>
+                            <span class="table-Defer"><button type="button" (click)="holdData(item.id)"class="btn btn-danger btn-rounded btn-sm my-0">Defer</button></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Editable table -->

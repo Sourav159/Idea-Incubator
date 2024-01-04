@@ -1,0 +1,16 @@
+<nav-app></nav-app> <!-- DN -->
+<main>
+    <div class="container-fluid">
+        <div class="row mx-5 h-100vh mt-banner">
+            <div class="col-lg-2 border-right" style="width:200px">
+                <p-menu [model]="items" (click)="visibleSidebar = false"></p-menu>
+            </div>
+            <div class="col-lg-10 p-0">
+                <router-outlet>
+                </router-outlet>
+            </div>
+        </div>
+            
+        
+    </div>
+</main>
